@@ -1,10 +1,15 @@
+import React from 'react';
 import './App.css';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import CardStudent from './components/CardStudent/CardStudent';
+import CardForm from './components/CardForm/CardForm';
 
 function App() {
-  return (
-    <div className="App">
-      <h1>Hello</h1>
-    </div>
+  return (  
+    <Router>
+      <Route exact path='/' component={CardStudent} />
+      <Route path='/form' component={CardForm} />
+    </Router>
   );
 }
 
