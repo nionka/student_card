@@ -24,7 +24,7 @@ const CardStudent = () => {
                   <span className="fw-bold">Год рождения: </span>{student.yearOfBirth}
                 </div>
                 <div>
-                  <span className="fw-bold">Портфолио: </span>{student.portfolio}
+                  <span className="fw-bold">Портфолио: </span><a href={student.portfolio}>{student.portfolio}</a>
                 </div>
               </div>
             )

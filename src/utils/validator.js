@@ -8,6 +8,17 @@ export function validator (data, config) {
       case 'isRequired' :
         statusValidate = data.trim() === '';
         break;
+      case 'isCorrectLight':
+        statusValidate = data.length !== config.value;
+        break;
+      case 'isCorrectYear':
+        const currentYear = new Date().getFullYear();
+        statusValidate = +currentYear < +data;
+        break;
+      case 'isCorrectUrl':
+        const urlRegExp = /http(s?):\/\/[-\w\.]{3,}\.[A-Za-z]{2,3}/;
+        statusValidate = !urlRegExp.test(data);
+        break;
       default:
         break;
     }
