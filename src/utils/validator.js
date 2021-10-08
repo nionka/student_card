@@ -13,7 +13,7 @@ export function validator (data, config) {
         break;
       case 'isCorrectYear':
         const currentYear = new Date().getFullYear();
-        statusValidate = +currentYear < +data;
+        statusValidate = currentYear < Number(data);
         break;
       case 'isCorrectUrl':
         const urlRegExp = /http(s?):\/\/[-\w\.]{3,}\.[A-Za-z]{2,3}/;
